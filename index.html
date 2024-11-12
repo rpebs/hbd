@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday Nusa !</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Calistoga&family=Dancing+Script:wght@400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Saira:ital,wght@0,100..900;1,100..900&family=Sen:wght@400..800&family=Sofia&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Calistoga&family=Caveat:wght@400..700&family=Dancing+Script:wght@400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Saira:ital,wght@0,100..900;1,100..900&family=Sen:wght@400..800&family=Sofia&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Calistoga&family=Caveat:wght@400..700&family=Dancing+Script:wght@400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Saira:ital,wght@0,100..900;1,100..900&family=Sen:wght@400..800&family=Sofia&family=Tilt+Neon&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+           /* Style umum */
+      * {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+          font-family: Arial, sans-serif;
+      }
+
+      body {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          background-color: #ffefba;
+          overflow: hidden;
+      }
+
+      .container {
+          text-align: center;
+          width: 100%;
+          max-width: 700px;
+          padding: 20px;
+      }
+
+      .happy-birthday {
+          font-size: 2.5em;
+          color: #ff4081;
+          animation: blink 1s infinite alternate;
+          margin-bottom: 10px;
+          font-family: "Caveat", cursive;
+      }
+
+      .message {
+          font-size: 1.5em;
+          font-family: "Tilt Neon", sans-serif;
+          color: #555;
+          margin-bottom: 10px;
+          padding: 0 10px;
+      }
+
+      /* Animasi balon */
+      .balloons {
+          position: relative;
+          width: 100%;
+          height: 10px;
+      }
+
+      .balloon {
+          position: absolute;
+          bottom: -100px;
+          width: 50px;
+          height: 70px;
+          background-color: #ff4081;
+          border-radius: 50%;
+          animation: float 5s ease-in infinite;
+          opacity: 0.7;
+      }
+
+      .balloon::after {
+          content: "";
+          position: absolute;
+          bottom: -15px;
+          left: 50%;
+          width: 2px;
+          height: 15px;
+          background: #555;
+          transform: translateX(-50%);
+      }
+
+      .balloon1 { left: 10%; background-color: #ff4081; animation-delay: 0s; }
+      .balloon2 { left: 30%; background-color: #ffeb3b; animation-delay: 1s; }
+      .balloon3 { left: 50%; background-color: #42a5f5; animation-delay: 2s; }
+      .balloon4 { left: 70%; background-color: #66bb6a; animation-delay: 3s; }
+      .balloon5 { left: 90%; background-color: #ab47bc; animation-delay: 4s; }
+
+      /* Kotak kejutan */
+      .surprise-box {
+          display: none;
+          font-size: 1.8em;
+          color: #ffffff;
+          background-color: #ff5722;
+          padding: 20px;
+          border-radius: 10px;
+          margin-top: 20px;
+          animation: pop 0.5s forwards;
+      }
+
+      /* Tombol kejutan */
+      .surprise-btn {
+          background-color: #ff4081;
+          color: white;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 20px;
+          font-size: 1.2em;
+          cursor: pointer;
+          transition: transform 0.2s;
+          text-decoration: none;
+      }
+
+      .surprise-btn:hover {
+          transform: scale(1.1);
+      }
+
+      .notes {
+          margin-top: 25px;
+          font-size: 0.9em;
+          color: #696969;
+          font-family: "Dancing Script", cursive;
+        font-optical-sizing: auto;
+        font-style: normal;
+        font-weight: bold;
+      }
+
+      /* Keyframes animasi */
+      @keyframes blink {
+          from { opacity: 1; }
+          to { opacity: 0.6; }
+      }
+
+      @keyframes float {
+          0% { transform: translateY(0); opacity: 0.8; }
+          50% { transform: translateY(-200px); opacity: 1; }
+          100% { transform: translateY(0); opacity: 0.8; }
+      }
+
+      @keyframes pop {
+          0% { transform: scale(0.5); opacity: 0; }
+          100% { transform: scale(1); opacity: 1; }
+      }
+
+      /* Responsive untuk mobile */
+      @media (max-width: 600px) {
+          .happy-birthday {
+              font-size: 1.7em;
+          }
+
+          .message {
+              font-size: 1.1em;
+          }
+
+          .balloon {
+              width: 40px;
+              height: 55px;
+          }
+
+          .surprise-btn {
+              font-size: 1em;
+              padding: 8px 15px;
+          }
+
+          .surprise-box {
+              font-size: 1.5em;
+              padding: 15px;
+          }
+      }
+      ``
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="happy-birthday">🎉Happy Birthday Nusa !</h1>
+      <p class="message">
+        Semoga semua harapan dan impiannya terwujud, dan bahagia selalu
+        dimanapun kamu berada ! ❤️🥳
+      </p>
+
+      <!-- Balon -->
+      <div class="balloons">
+        <div class="balloon balloon1"></div>
+        <div class="balloon balloon2"></div>
+        <div class="balloon balloon3"></div>
+        <div class="balloon balloon4"></div>
+        <div class="balloon balloon5"></div>
+      </div>
+      <br />
+      <div class="cake">
+        <img src="cake.png" alt="" width="200" />
+      </div>
+
+      <a
+        href="https://www.youtube.com/watch?v=WtLXpfPpb-k&ab_channel=BaLiTa-BabaLiliTata"
+        class="surprise-btn"
+      >
+        Coba Klik Deh !
+      </a>
+
+      <p class="notes">From Your Beloved Friend 😊</p>
+
+      <!-- Kotak Surprise -->
+      <div class="surprise-box" id="surpriseBox">
+        🎁 Kejutan! Selamat menikmati hari spesialmu! 🎁
+      </div>
+    </div>
+
+    <script>
+      function showSurprise() {
+        const surpriseBox = document.getElementById("surpriseBox");
+        surpriseBox.style.display = "block";
+      }
+    </script>
+  </body>
+</html>
